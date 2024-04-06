@@ -5,15 +5,15 @@ import {StyleSheet} from 'react-native';
 export default StyleSheet.create({
   container: {
     // flex: 1,
-    // justifyContent: 'center', // Center vertically
-    alignItems: 'center', // Center horizontally
-    marginVertical: '45%',
+    height: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'white', // Change the background color to white
   },
   teaLeafImage: {
-    // position: 'absolute',
     top: 0,
-    width: 150, // Adjust the width as needed
-    height: 150, // Adjust the height as needed
+    width: 150,
+    height: 150,
   },
   formContainer: {
     width: '80%',
@@ -24,22 +24,22 @@ export default StyleSheet.create({
     borderWidth: 1,
     borderRadius: 20,
     marginTop: 20,
-    // marginBottom: 0,
     paddingHorizontal: 15,
+    color: 'black',
   },
   loginButton: {
     backgroundColor: 'green',
-    paddingVertical: 12,
+    paddingVertical: 15,
     alignItems: 'center',
     borderRadius: 15,
-    marginTop: 20,
+    marginTop: 25,
   },
   loginButtonText: {
     color: 'white',
     fontWeight: 'bold',
   },
   signupText: {
-    color: 'white',
+    color: 'black',
     marginTop: 10,
   },
   signupTextLink: {

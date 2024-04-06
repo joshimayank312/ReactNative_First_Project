@@ -1,49 +1,62 @@
-import React, {useState} from 'react';
-import {View, Text, TextInput, TouchableOpacity, Image} from 'react-native';
-import styles from './styles';
+// LoginScreen.js
+
+import React from 'react';
+import {
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  Image,
+  Linking,
+} from 'react-native';
+import styles from './styles'; // Import the external stylesheet
 
 const LoginScreen = () => {
-  const [name, setName] = useState(''); // State variable to store the entered name
-
-  const handleLogin = () => {
-    // Perform login logic here
-    // For now, just display the welcome message with the entered name
-    alert(`Welcome ${name}`);
-  };
-
   return (
     <View style={styles.container}>
       <Image
-        source={require('./tea-leaf-image.png')}
+        source={require('./tea-leaf-image.png')} // Replace with your own image
         style={styles.teaLeafImage}
-        resizeMode="contain"
+        resizeMode="contain" // Ensure the image fits well
         accessibilityLabel="Tea Leaf Image"
       />
       <View style={styles.formContainer}>
         <TextInput
+          textContentType="emailAddress"
           style={styles.input}
-          placeholder="Email"
+          placeholder="Email Id"
+          placeholderTextColor="green"
           keyboardType="email-address"
           accessibilityLabel="Email Input"
           accessibilityHint="Enter your email address"
+          required
         />
         <TextInput
           style={styles.input}
           placeholder="Password"
+          placeholderTextColor="green"
           secureTextEntry
           accessibilityLabel="Password Input"
           accessibilityHint="Enter your password"
+          required
         />
         <TouchableOpacity
           style={styles.loginButton}
-          onPress={handleLogin} // Call handleLogin function when login button is pressed
           accessibilityLabel="Login Button">
-          <Text style={styles.loginButtonText}>Login</Text>
+          <Text
+            style={styles.loginButtonText}
+            onPress={() => Linking.openURL('http://google.com')}>
+            Login
+          </Text>
         </TouchableOpacity>
       </View>
       <Text style={styles.signupText}>
         Don't have an account yet?{' '}
-        <Text style={styles.signupTextLink}>Sign Up</Text>
+        <Text
+          style={styles.signupTextLink}
+          onPress={() => Linking.openURL('./WelcomeScreen.js')}>
+          Sign Up
+        </Text>
       </Text>
     </View>
   );
